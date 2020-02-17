@@ -1,0 +1,31 @@
+﻿@model ASPEjercicio2.Models.ArrayNum
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row">
+    @using (Html.BeginForm("/Index", "Home", FormMethod.Post))
+    {
+        <div class="form-group">
+            <label for="numero">Introduzca 10 numeros</label> <br />
+            @for (int i = 0; i < 10; i++)
+            {
+
+                <input class=".w"  asp-for="ArrayNums[i]"  required/>
+            }
+           
+        </div>
+        <div class="form-group">
+            
+        </div>
+        <button type="submit" class="btn-primary" id="enviar" value="enviar" name="operacion">Enviar</button>
+
+
+    }
+
+</div>
+
+
+
+

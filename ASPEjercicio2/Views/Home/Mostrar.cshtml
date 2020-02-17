@@ -1,0 +1,50 @@
+﻿@model  ASPEjercicio2.Models.ArrayNum
+
+
+@{
+    ViewData["Title"] = "Mostrar";
+}
+
+
+<div class="row">  
+    <div class="form-group">
+
+
+        <div>
+            <label>Numero Mayor</label>
+            <p>@Model.Nmayor</p>
+            <label>Numero Menor</label>
+            <p>@Model.Nmenor</p>
+        </div>
+
+        <table class="table table-bordered">
+            <tr>
+                <th>Números Ingresados</th>
+                @for (int i = 0; i < 10; i++)
+                {
+                    <th> Número @(i + 1) </th>
+                }
+            </tr>
+            @for (int i = 0; i < Model.ArrayNums.Count; i++)
+            {
+                <tr>
+                    <td>@Model.ArrayNums[i]</td>
+                    @foreach (int j in Model.ArrayNums)
+                    {
+                        <td>@(Model.ArrayNums[i] + j)</td>
+                    }
+                </tr>
+            }
+        </table>
+        <label>Numeros Introducidos:</label>
+        <ul class="table">
+            @for (int i = 0; i < Model.ArrayNums.Count; i++)
+            {
+                <li class="list-group-item"> @Model.ArrayNums[i]</li>
+            }
+        </ul>
+
+    </div>
+        <div class="form-group">
+        </div>
+</div>
